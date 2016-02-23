@@ -1,4 +1,6 @@
 import random
+
+# thanks to Grom PE for figuring this out
 theAlphabet = "36QtfkmuFds0UjlvCGIXZ125bEMhz48JSYgipwKn7OVHRBPoy9DLWaceqxANTr"
 
 def decTo62(n):

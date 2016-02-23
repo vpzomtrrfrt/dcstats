@@ -74,10 +74,18 @@ def printData(d, ns):
 		for x in sp:
 			if len(tp) != 0:
 				tp += ","
-			if x in d:
-				tp += str(d[x])
-			else:
+			c = d
+			ss = x.split(".")
+			for m in ss:
+				if m in c:
+					c = c[m]
+				else:
+					c = None
+					break
+			if c == None:
 				tp += "null"
+			else:
+				tp += str(c)
 		print(tp)
 
 if __name__ == "__main__":
