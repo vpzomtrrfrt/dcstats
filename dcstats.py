@@ -39,6 +39,8 @@ def dataForPanel(pid, parents=()):
 		gr = get("http://drawception.com/viewgame/"+gid+"/-")
 		usi = dcid.unscrambleID(pid)
 		likesection = findPiece(gr.text, 'like-'+str(usi), '</div>')
+		if likesection == None:
+			return None
 		tr["bonus"] = findPiece(likesection, 'bonusModifier" style="display: none;">', '<')
 		tr["likes"] = findPiece(likesection, 'numlikes">', '<')
 	return tr
