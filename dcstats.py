@@ -46,6 +46,8 @@ def dataForPanel(pid, parents=()):
 	return tr
 
 def dataForUser(uid, parents=()):
+	if uid == None:
+		return None
 	tr = {}
 	r = get("http://drawception.com/player/"+uid+"/-")
 	tr["id"] = uid
